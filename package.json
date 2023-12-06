@@ -1,0 +1,35 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@firebase/app-types": "^0.9.0",
+    "@headlessui/vue": "^1.7.16",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/i18n": "^7.3.1",
+    "@nuxtjs/tailwindcss": "^6.9.4",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@vueuse/components": "^10.6.1",
+    "@vueuse/nuxt": "^10.6.1",
+    "firebase": "^10.6.0",
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.5.0",
+    "nuxt": "^3.8.1",
+    "nuxt-icon": "^0.6.6",
+    "nuxt-swiper": "^1.2.2",
+    "nuxt-vuefire": "^0.4.1",
+    "swiper": "^11.0.4",
+    "vue": "^3.3.8",
+    "vue-i18n": "^9.8.0",
+    "vue-router": "^4.2.5",
+    "vuefire": "^3.1.18"
+  }
+}

@@ -1,0 +1,18 @@
+<script setup
+        lang="ts">
+
+</script>
+
+<template>
+  <svg viewBox="0 0 102 93"
+       fill="none"
+       xmlns="http://www.w3.org/2000/svg">
+    <path d="M33.6795 10C41.3775 -3.33333 60.6225 -3.33333 68.3205 10L98.6314 62.5C106.329 75.8333 96.7069 92.5 81.3109 92.5H20.6891C5.2931 92.5 -4.3294 75.8333 3.3686 62.5L33.6795 10Z"
+          fill="#01AF00"/>
+  </svg>
+
+</template>
+
+<style scoped>
+
+</style>
