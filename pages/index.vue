@@ -109,8 +109,7 @@ const features = [
               <h1
                   class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
                 {{ feature.title }}
-                <img class="absolute -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-12 -z-10"
-                     src="images/triangle.svg">
+                <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
               </h1>
               <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
                 {{ feature.description }}
@@ -286,8 +285,7 @@ const features = [
           <h1
               class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
             Influencer Marketing
-            <img class="absolute -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-12 -z-10"
-                 src="images/triangle.svg">
+            <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
           </h1>
           <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
             Entre nuestras estrategias para el crecimiento y la visibilidad de tu marca, te ofrecemos el influencer marketing.
