@@ -4,7 +4,7 @@ import tailwindTypography from '@tailwindcss/typography'
 import tailwindForms from '@tailwindcss/forms'
 
 export default defineNuxtConfig({
-
+    ssr: true,
     devtools: { enabled: true },
     modules: [
         "@nuxtjs/tailwindcss",

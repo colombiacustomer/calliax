@@ -76,6 +76,7 @@ async function saveContact() {
               names: contact.names,
               email: contact.email,
               phone: contact.phone,
+              message: contact.message
             }).then(response => {
               codeRequest.value = 3
               messageRequest.value = '¡Muy pronto te contactaremos!'
@@ -97,7 +98,7 @@ async function saveContact() {
 
 <template>
   <!--  Contenedor general-->
-  <div class="flex flex-col w-full h-full rounded-lg mb-8 sm:grid sm:grid-cols-2 px-4 cursor-default pb-16">
+  <div class="flex flex-col w-full h-full rounded-lg mb-8 sm:grid sm:grid-cols-2 px-4 cursor-default pb-4">
     <!--    Contenedor mensaje de Contáctanos -->
     <div class="flex h-fit sm:h-full items-center mb-10 sm:pm-0">
       <div class="relative col-span-full sm:col-span-1 flex flex-col justify-center h-full">

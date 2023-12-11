@@ -50,7 +50,7 @@ const features = [
 <template>
   <div class="relative h-full overflow-x-hidden">
     <div id="about-us"
-         class="h-screen max-w-screen-xl m-auto pt-20 sm:pt-6 flex lg:flex-row relative items-center">
+         class="h-full sm:h-screen max-w-screen-xl m-auto pt-20 sm:pt-6 flex lg:flex-row relative items-center">
       <jumbotron>
         <template #title>¿Quiénes somos?</template>
         <template #description>
@@ -67,22 +67,23 @@ const features = [
         </template>
       </jumbotron>
     </div>
-    <div class="h-screen max-w-screen-xl m-auto pt-20 sm:pt-28 flex lg:flex-row relative">
+    <div class="h-screen max-w-screen-xl m-auto pt-0 sm:pt-28 flex lg:flex-row relative">
       <Swiper
-          :modules="[SwiperAutoplay, SwiperEffectFade, SwiperScrollbar, SwiperNavigation]"
+          :modules="[SwiperAutoplay, SwiperEffectCoverflow, SwiperScrollbar, SwiperNavigation]"
           :navigation="{
             enabled: true,
             nextEl: '.swiper-btn-next',
             prevEl: '.swiper-btn-prev',
           }"
           loop
-          effect="fade"
+          effect="coverflow"
           :autoplay="{
-                    delay: 20000,
+                    delay: 10000,
                     pauseOnMouseEnter: true,
+                    disableOnInteraction: true
                   }"
-          class="h-full w-full rounded-lg relative z-0">
-        <button class="swiper-btn-prev">
+          class="h-full w-full rounded-lg relative">
+        <button class="swiper-btn-prev z-20 absolute">
           <svg xmlns="http://www.w3.org/2000/svg"
                fill="none"
                viewBox="0 0 24 24"
@@ -95,7 +96,8 @@ const features = [
           </svg>
         </button>
         <SwiperSlide v-for="(feature, idx) in features"
-                     :key="idx">
+                     :key="idx"
+                     class="z-10 bg-red-400">
           <div
               class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
             <div
@@ -117,7 +119,7 @@ const features = [
             </div>
           </div>
         </SwiperSlide>
-        <button class="swiper-btn-next">
+        <button class="swiper-btn-next z-50">
           <svg xmlns="http://www.w3.org/2000/svg"
                fill="none"
                viewBox="0 0 24 24"
@@ -133,7 +135,7 @@ const features = [
       </Swiper>
     </div>
     <div id="what-do-we-do"
-         class="h-screen max-w-screen-xl m-auto sm:pt-6 flex lg:flex-row relative items-center">
+         class="h-full sm:h-screen max-w-screen-xl m-auto sm:pt-6 flex lg:flex-row relative items-center">
       <jumbotron>
         <template #title>¿Qué hacemos?</template>
         <template #description>
@@ -273,11 +275,11 @@ const features = [
         </div>
       </div>
     </div>
-    <div class="h-screen max-w-screen-xl m-auto pt-20 sm:pt-28 flex lg:flex-row relative">
+    <div class="h-full sm:h-screen max-w-screen-xl m-auto pt-20 sm:pt-28 flex lg:flex-row relative">
       <div
           class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
         <div
-            class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content">
+            class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content pt-10">
           <social-dashboard class="w-full h-full"/>
         </div>
         <div
@@ -298,7 +300,7 @@ const features = [
       </div>
     </div>
     <div id="contact-us"
-         class="h-full max-w-screen-xl m-auto px-4 sm:px-0 pt-24 sm:pt-28 flex lg:flex-row relative items-center">
+         class="h-full sm:h-screen max-w-screen-xl m-auto px-4 sm:px-0 pt-24 sm:pt-28 flex lg:flex-row relative items-center">
       <contact></contact>
     </div>
   </div>
