@@ -67,7 +67,7 @@ const features = [
         </template>
       </jumbotron>
     </div>
-    <div class="h-screen max-w-screen-xl m-auto pt-0 sm:pt-28 flex lg:flex-row relative">
+    <div class="h-full max-w-screen-xl m-auto pt-0 sm:pt-28 flex lg:flex-row relative items-center">
       <Swiper
           :modules="[SwiperAutoplay, SwiperEffectCoverflow, SwiperScrollbar, SwiperNavigation]"
           :navigation="{
@@ -83,18 +83,33 @@ const features = [
                     disableOnInteraction: true
                   }"
           class="h-full w-full rounded-lg relative">
-        <button class="swiper-btn-prev z-20 absolute">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke-width="3"
-               stroke="currentColor"
-               class="w-6 h-6 text-primary">
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
-          </svg>
-        </button>
+        <div class="w-full flex justify-center items-center space-x-4">
+          <button class="swiper-btn-prev z-20">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="3"
+                 stroke="currentColor"
+                 class="w-6 h-6 text-primary rotate-180">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
+            </svg>
+          </button>
+          <button class="swiper-btn-next">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="3"
+                 stroke="currentColor"
+                 class="w-6 h-6 text-primary">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
+            </svg>
+
+          </button>
+        </div>
         <SwiperSlide v-for="(feature, idx) in features"
                      :key="idx"
                      class="z-10 bg-red-400">
@@ -119,19 +134,6 @@ const features = [
             </div>
           </div>
         </SwiperSlide>
-        <button class="swiper-btn-next z-50">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke-width="3"
-               stroke="currentColor"
-               class="w-6 h-6 text-primary">
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
-          </svg>
-
-        </button>
       </Swiper>
     </div>
     <div id="what-do-we-do"
@@ -300,7 +302,7 @@ const features = [
       </div>
     </div>
     <div id="contact-us"
-         class="h-full sm:h-screen max-w-screen-xl m-auto px-4 sm:px-0 pt-24 sm:pt-28 flex lg:flex-row relative items-center">
+         class="h-full max-w-screen-xl m-auto px-4 sm:px-0 pt-24 sm:pt-28 flex lg:flex-row relative items-center">
       <contact></contact>
     </div>
   </div>
