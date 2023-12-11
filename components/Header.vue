@@ -3,7 +3,7 @@
 
 import { onMounted } from "#imports";
 
-const showNavTop = ref(false)
+const showNavTop = ref(true)
 const lastScrollPos = ref(0)
 const openMenu = ref(false)
 const links = [
@@ -28,7 +28,7 @@ onMounted(() => {
 
 <template>
   <div class="w-full h-20 z-50 bg-secondary fixed top-0 shadow transition ease-in"
-       :class="[showNavTop ? 'opacity-100' : 'opacity-0']">
+       :class="[showNavTop ? 'block' : 'hidden']">
     <nav class="flex flex-row max-w-screen-xl h-full items-center justify-between text-slate-200 m-auto px-4 sm:px-0 z.50">
       <span class="text-3xl flex items-center font-bold font-sans text-primary">calliax</span>
       <!--      <span>{{ isScrolling }}</span>-->

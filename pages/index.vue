@@ -14,6 +14,25 @@ import TriangleDiagram from "~/components/images/TriangleDiagram.vue";
 import ContactForm from "~/components/Contact.vue";
 import SocialDashboard from "~/components/images/SocialDashboard.vue";
 
+useHead({
+  title: 'Calliax',
+  meta: [
+    {
+      name: "description",
+      key: 'calliax, que es calliax, what is calliax, call center, callcenter, calcenter, colcenter, calias, caliax, servicios callcenter, vender por callcenter',
+      content:
+          'Empresa de call center dedicada a proporcionar servicios de atención al cliente a otras empresas, ya sea internamente o externalizando esta función. Utilizamos una infraestructura de telecomunicaciones avanzada y empleamos agentes especializados para manejar una variedad de consultas y solicitudes de los clientes. Nuestro call center puede ofrecer servicios como soporte técnico, ventas, encuestas, atención postventa, telemarketing y más. Como empresa, utilizamos sistemas de gestión de llamadas y bases de datos para acceder a la información relevante del cliente y garantizar una interacción eficiente. El objetivo principal es mejorar la satisfacción del cliente y fortalecer la relación entre la empresa y sus clientes a través de la comunicación telefónica efectiva.'
+    }
+  ]
+})
+
+useSeoMeta({
+  title: 'Calliax',
+  ogTitle: 'Calliax',
+  description: 'Empresa de call center dedicada a proporcionar servicios de atención al cliente a otras empresas, ya sea internamente o externalizando esta función. Utilizamos una infraestructura de telecomunicaciones avanzada y empleamos agentes especializados para manejar una variedad de consultas y solicitudes de los clientes. Nuestro call center puede ofrecer servicios como soporte técnico, ventas, encuestas, atención postventa, telemarketing y más. Como empresa, utilizamos sistemas de gestión de llamadas y bases de datos para acceder a la información relevante del cliente y garantizar una interacción eficiente. El objetivo principal es mejorar la satisfacción del cliente y fortalecer la relación entre la empresa y sus clientes a través de la comunicación telefónica efectiva.',
+  ogDescription: 'Empresa de call center dedicada a proporcionar servicios de atención al cliente a otras empresas, ya sea internamente o externalizando esta función. Utilizamos una infraestructura de telecomunicaciones avanzada y empleamos agentes especializados para manejar una variedad de consultas y solicitudes de los clientes. Nuestro call center puede ofrecer servicios como soporte técnico, ventas, encuestas, atención postventa, telemarketing y más. Como empresa, utilizamos sistemas de gestión de llamadas y bases de datos para acceder a la información relevante del cliente y garantizar una interacción eficiente. El objetivo principal es mejorar la satisfacción del cliente y fortalecer la relación entre la empresa y sus clientes a través de la comunicación telefónica efectiva.',
+})
+
 definePageMeta({
   layout: 'spa'
 })
@@ -84,8 +103,9 @@ const features = [
                   }"
           class="h-full w-full rounded-lg relative">
         <div class="w-full flex justify-center items-center space-x-4">
-          <button class="swiper-btn-prev z-20">
+          <button class="swiper-btn-prev z-20" name="Previous" title="Previous">
             <svg xmlns="http://www.w3.org/2000/svg"
+                 title="Arrow previous"
                  fill="none"
                  viewBox="0 0 24 24"
                  stroke-width="3"
@@ -96,8 +116,9 @@ const features = [
                     d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
             </svg>
           </button>
-          <button class="swiper-btn-next">
+          <button class="swiper-btn-next" name="Next" title="Next">
             <svg xmlns="http://www.w3.org/2000/svg"
+                 title="Arrow next"
                  fill="none"
                  viewBox="0 0 24 24"
                  stroke-width="3"
@@ -157,7 +178,7 @@ const features = [
       <div class="relative w-full flex flex-col items-center sm:flex-row justify-evenly space-y-28 sm:space-y-0">
         <card-service class="max-w-sm max-h-96">
           <template #image>
-            <positive-attitude class="w-full h-full m-auto"/>
+            <positive-attitude title="Personas capacitadas en ventas" class="w-full h-full m-auto"/>
           </template>
           <template #title>Experimentados</template>
           <template #body>Nuestros agentes son expertos y sumamente capacitados en técnicas de ventas, por lo cual aumentan las
@@ -166,7 +187,7 @@ const features = [
         </card-service>
         <card-service class="max-w-sm max-h-96">
           <template #image>
-            <engineering-team class="w-full h-full m-auto"/>
+            <engineering-team title="Trabajo en equipo call center" class="w-full h-full m-auto"/>
           </template>
           <template #title>Eficiencia</template>
           <template #body>La infraestructura telefónica de <span class="text-primary font-semibold">Calliax</span> está diseñada para
@@ -175,7 +196,7 @@ const features = [
         </card-service>
         <card-service class="max-w-sm max-h-96">
           <template #image>
-            <map-diagram class="w-full h-full"/>
+            <map-diagram title="Impacto social positivo" class="w-full h-full"/>
           </template>
           <template #title>Internacionalización</template>
           <template #body>Podemos ayudarte a abordar otros mercados internacionales sin la barrera del idioma.
