@@ -6,13 +6,15 @@ import { ref as dbRef, push } from "@firebase/database";
 import { useAppCheck, useDatabaseList } from 'vuefire'
 import CircleDiagram from "~/components/images/CircleDiagram.vue";
 
+const { t } = useI18n()
+
 // Conseguir la base de datos
 const firebase = useDatabase('conctactos');
 // Tener la referencia a los datos que necesitamos
 const contactosRef = dbRef(firebase, 'contactos');
 // Tener los datos de la referencia anterior
 // const contactos = useDatabaseList(contactosRef, { once: true });
-const messageRequest = ref('¡Quiero recibir más información!')
+const messageRequest = ref(t('IWantToReceiveMoreInformation'))
 const codeRequest = ref(0)
 const isValidated = ref(false)
 
@@ -65,11 +67,11 @@ async function saveContact() {
   // console.log(appCheck)
   contact.writeMessage = false
   codeRequest.value = 1
-  messageRequest.value = 'Estamos validando...'
+  messageRequest.value = t('validating')
   await validateData().then(response => {
         if (response) {
           codeRequest.value = 2
-          messageRequest.value = 'Guardando información'
+          messageRequest.value = t('saving')
           setTimeout(() => {
             // Poner nuevo registro a la base de datos con identificador único
             push(contactosRef, {
@@ -79,19 +81,19 @@ async function saveContact() {
               message: contact.message
             }).then(response => {
               codeRequest.value = 3
-              messageRequest.value = '¡Muy pronto te contactaremos!'
+              messageRequest.value = t('finishing')
             }).catch(error => {
               codeRequest.value = -1
-              messageRequest.value = 'Perdona, tenemos problemas para guardar tus datos.'
+              messageRequest.value = t('messageError')
             })
           }, 1800);
         } else {
           codeRequest.value = 4
-          messageRequest.value = 'Echa un vistazo a tus datos y corrige, por favor.'
+          messageRequest.value = t('messageAdvertising')
         }
       }
   ).catch(result => {
-    messageRequest.value = 'Echa un vistazo a tus datos y corrige'
+    messageRequest.value = t('messageAdvertising')
   })
 }
 </script>
@@ -120,7 +122,7 @@ async function saveContact() {
         <div
             class="col-span-1 flex items-center justify-start p-1">
           <label for="names"
-                 class="text-secondary/80">Nombres o razón social empresa</label>
+                 class="text-secondary/80">{{ $t('namesForm') }}</label>
         </div>
         <div class="col-span-1 flex items-center justify-start p-1">
           <input id="names"
@@ -137,7 +139,7 @@ async function saveContact() {
         <div
             class="col-span-1 flex items-center justify-start p-1">
           <label for="email"
-                 class="text-secondary/80">Dirección correo electrónico</label>
+                 class="text-secondary/80">{{ $t('emailForm') }}</label>
         </div>
         <div class="col-span-1 flex items-center justify-start p-1">
           <input id="email"
@@ -151,7 +153,7 @@ async function saveContact() {
         <br class="block sm:hidden">
         <div class="col-span-1 flex items-center justify-start p-1">
           <label for="phone"
-                 class="text-secondary/80">Número de teléfono móvil</label>
+                 class="text-secondary/80">{{ t('phoneForm') }}</label>
         </div>
         <div class="col-span-1 flex items-center justify-start p-1">
           <input id="phone"
@@ -168,7 +170,7 @@ async function saveContact() {
         <div
             class="col-span-1 flex items-center justify-start">
           <label for="message"
-                 class="text-secondary/80">¿Tienes alguna inquietud?</label>
+                 class="text-secondary/80">¿{{ $t('messageForm') }}</label>
         </div>
         <div
             class="col-span-1 flex items-center justify-start p-1">

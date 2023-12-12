@@ -47,25 +47,30 @@
                   as="h3"
                   class="text-lg font-medium leading-6 text-slate-100 text-center"
               >
-                Selecciona el idioma de su preferencia
+                {{ $t('switcherLanguage') }}
               </DialogTitle>
 
               <div class="mt-4 flex flex-col">
-                <button
+                <label
                     v-for="(language, index) in languages"
-                    type="button"
-                    class="inline-flex justify-center rounded-md text-sm font-medium text-slate-100 hover:bg-primary hover:text-secondary py-4"
+                    :for="language.flag"
+                    class="flex justify-center items-center rounded-md text-sm font-medium text-slate-100 hover:bg-primary hover:text-secondary py-4 space-x-6"
                     @click="closeModal"
                 >
-                  <span class="w-1/3 flex flex-row items-center space-x-3">
-                    <img
-                        class="flex shrink-0"
-                        :src="'flags/w40/'+ language.flag + '.png'"
-                        width="28"
-                        :alt="language.country">
-                    <span class="flex grow">{{ language.name }}</span>
-                  </span>
-                </button>
+                  <input type="radio"
+                         v-model="locale"
+                         :id="language.flag"
+                         :value="language.flag"
+                         class="hidden"/>
+                  <!--                         class="w-1/3 flex flex-row items-center space-x-3"/>-->
+                  <img
+                      class="flex shrink-0"
+                      :src="'flags/w40/'+ language.flag + '.png'"
+                      width="28"
+                      :alt="language.country">
+                  <span class="flex w-1/3">{{ language.name }}</span>
+                  <!--                  </input>-->
+                </label>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -76,7 +81,7 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import {
   TransitionRoot,
   TransitionChild,
@@ -85,11 +90,13 @@ import {
   DialogTitle,
 } from '@headlessui/vue'
 
+const { locale, t } = useI18n()
+
 const isOpen = ref(false)
 const languages = [
-  {'name': 'Español', 'flag': 'es', 'country': 'España'},
-  {'name': 'Portugués', 'flag': 'pt', 'country': 'Portugal'},
-  {'name': 'Inglés', 'flag': 'us', 'country': 'Estados Unidos'},
+  { 'name': t('spanish'), 'flag': 'es', 'country': 'España' },
+  { 'name': t('portuguese'), 'flag': 'pt', 'country': 'Portugal' },
+  { 'name': t('english'), 'flag': 'us', 'country': 'Estados Unidos' },
 ]
 
 function closeModal() {

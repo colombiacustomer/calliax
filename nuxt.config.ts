@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     modules: [
         "@nuxtjs/tailwindcss",
         "@vueuse/nuxt",
+        [
+            '@nuxtjs/i18n',
+            { vueI18n: './i18n.config.ts' }
+        ],
         'nuxt-icon',
         'nuxt-swiper',
         ['nuxt-vuefire', {
