@@ -6,7 +6,9 @@ import { ref as dbRef, push } from "@firebase/database";
 import { useAppCheck, useDatabaseList } from 'vuefire'
 import CircleDiagram from "~/components/images/CircleDiagram.vue";
 
-const { t } = useI18n()
+const { t } = useI18n({
+  useScope: 'global'
+})
 
 // Conseguir la base de datos
 const firebase = useDatabase('conctactos');
@@ -106,11 +108,12 @@ async function saveContact() {
       <div class="relative col-span-full sm:col-span-1 flex flex-col justify-center h-full">
         <h1 class="relative text-4xl sm:text-6xl font-bold mb-6 sm:mb-12">
           <triangle-diagram class="absolute w-16 h-16 sm:w-32 sm:h-32 -z-10 -left-1 sm:-left-5 -top-4 sm:-top-10 rotate-45"/>
-          Contáctanos
+          {{ $t('contactUsForm') }}
         </h1>
-        <p class="text-xl text-secondary/80">¡Estamos emocionados por la oportunidad de conectarnos contigo y tu empresa! <br><br>
-          Si deseas transformar tus ventas por teléfono y descubrir cómo nuestros servicios pueden impulsar tu éxito, te invitamos a
-          completar nuestro breve formulario. <br><br> ¡Esperamos conocerte pronto!</p>
+        {{ $t('messageContactUsForm') }}
+<!--        <p class="text-xl text-secondary/80">¡Estamos emocionados por la oportunidad de conectarnos contigo y tu empresa! <br><br>-->
+<!--          Si deseas transformar tus ventas por teléfono y descubrir cómo nuestros servicios pueden impulsar tu éxito, te invitamos a-->
+<!--          completar nuestro breve formulario. <br><br> ¡Esperamos conocerte pronto!</p>-->
       </div>
     </div>
     <!--    Contenedor del formulario-->
@@ -170,7 +173,7 @@ async function saveContact() {
         <div
             class="col-span-1 flex items-center justify-start">
           <label for="message"
-                 class="text-secondary/80">¿{{ $t('messageForm') }}</label>
+                 class="text-secondary/80">{{ $t('messageForm') }}</label>
         </div>
         <div
             class="col-span-1 flex items-center justify-start p-1">

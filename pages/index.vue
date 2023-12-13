@@ -11,10 +11,12 @@ import MarketingFeature from "~/components/MarketingFeature.vue";
 import Choose from "~/components/images/Choose.vue";
 import Jumbotron from "~/components/Jumbotron.vue";
 import TriangleDiagram from "~/components/images/TriangleDiagram.vue";
-import ContactForm from "~/components/Contact.vue";
 import SocialDashboard from "~/components/images/SocialDashboard.vue";
 
-const { t } = useI18n()
+
+const { t } = useI18n({
+  useScope: 'global'
+})
 
 useHead({
   title: 'Calliax',
@@ -136,26 +138,94 @@ const features = [
 
           </button>
         </div>
-        <SwiperSlide v-for="(feature, idx) in features"
-                     :key="idx"
-                     class="z-10 bg-red-400">
+        <SwiperSlide
+            class="z-10 bg-red-400">
           <div
               class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
             <div
                 class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content">
               <img class=""
-                   :src="'images/'+ feature.image"
+                   :src="'images/chart-line.svg'"
                    alt="">
             </div>
             <div
                 class="w-full sm:w-1/2 h-full flex flex-col justify-center items-start px-6 sm:px-10 pt-8">
               <h1
                   class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
-                {{ feature.title }}
+                {{ $t('approach') }}
                 <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
               </h1>
               <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
-                {{ feature.description }}
+                {{ $t('descriptionApproach') }}
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+            class="z-10 bg-red-400">
+          <div
+              class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
+            <div
+                class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content">
+              <img class=""
+                   :src="'images/projections.svg'"
+                   alt="">
+            </div>
+            <div
+                class="w-full sm:w-1/2 h-full flex flex-col justify-center items-start px-6 sm:px-10 pt-8">
+              <h1
+                  class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
+                {{ $t('firmness') }}
+                <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
+              </h1>
+              <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
+                {{ $t('descriptionFirmness') }}
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+            class="z-10 bg-red-400">
+          <div
+              class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
+            <div
+                class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content">
+              <img class=""
+                   :src="'images/security_on.svg'"
+                   alt="">
+            </div>
+            <div
+                class="w-full sm:w-1/2 h-full flex flex-col justify-center items-start px-6 sm:px-10 pt-8">
+              <h1
+                  class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
+                {{ $t('security') }}
+                <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
+              </h1>
+              <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
+                {{ $t('descriptionSecurity') }}
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide
+            class="z-10 bg-red-400">
+          <div
+              class="w-full h-full px-4 sm:px-0 bg-slate-50 flex flex-col sm:flex-row justify-center items-center sm:items-start">
+            <div
+                class="w-2/3 sm:w-1/2 h-full flex items-start sm:items-center justify-center order-last sm:order-first box-content">
+              <img class=""
+                   :src="'images/world.svg'"
+                   alt="">
+            </div>
+            <div
+                class="w-full sm:w-1/2 h-full flex flex-col justify-center items-start px-6 sm:px-10 pt-8">
+              <h1
+                  class="text-secondary text-3xl sm:text-5xl font-semibold mb-6 relative z-0 cursor-default">
+                {{ $t('evolution') }}
+                <triangle-diagram class="absolute w-20 h-20 -left-5 sm:-left-10 w-16 sm:w-auto -top-2/3 rotate-45 -z-10"></triangle-diagram>
+              </h1>
+              <p class="w-full leading-relaxed sm:tracking-wide text-xl text-secondary/80 cursor-default">
+                {{ $t('descriptionEvolution') }}
               </p>
             </div>
           </div>

@@ -3,13 +3,16 @@
 
 import { onMounted } from "#imports";
 
+const { t } = useI18n({
+  useScope: 'global'
+})
 const showNavTop = ref(true)
 const lastScrollPos = ref(0)
 const openMenu = ref(false)
 const links = [
-  { 'title': '¿Quiénes somos?', 'a': '#about-us', 'icon': 'fluent:fingerprint-48-regular' },
-  { 'title': '¿Qué hacemos?', 'a': '#what-do-we-do', 'icon': 'fluent:molecule-48-regular' },
-  { 'title': 'Contacto', 'a': '#contact-us', 'icon': 'fluent:chat-multiple-32-regular' }
+  { 'title': t('aboutUs'), 'a': '#about-us', 'icon': 'fluent:fingerprint-48-regular' },
+  { 'title': t('whatDoWeDo'), 'a': '#what-do-we-do', 'icon': 'fluent:molecule-48-regular' },
+  { 'title': t('contactUs'), 'a': '#contact-us', 'icon': 'fluent:chat-multiple-32-regular' }
 ]
 
 function handleScroll() {
@@ -50,17 +53,32 @@ onMounted(() => {
       </div>
 
       <div class="hidden sm:flex flex-row items-center">
-        <a :href="link.a"
-           class="mx-2 py-2 px-4 rounded-md text-lg group relative transition-all ease-linear duration-200 hover:text-slate-50"
-           v-for="(link, index) in links"
-           :key="index">
+        <a href="#about-us"
+           class="mx-2 py-2 px-4 rounded-md text-lg group relative transition-all ease-linear duration-200 hover:text-slate-50">
           <div
               class="absolute hidden group-hover:block -inset-3 w-full h-full -z-10 text-primary">
-            <Icon :name="link.icon"
-                  class=""
+            <Icon name="fluent:fingerprint-48-regular"
                   size="56px"/>
           </div>
-          {{ link.title }}</a>
+          {{ $t('aboutUs') }}
+        </a>
+        <a href="#what-do-we-do"
+           class="mx-2 py-2 px-4 rounded-md text-lg group relative transition-all ease-linear duration-200 hover:text-slate-50">
+          <div
+              class="absolute hidden group-hover:block -inset-3 w-full h-full -z-10 text-primary">
+            <Icon name="fluent:molecule-48-regular"
+                  size="56px"/>
+          </div>
+          {{ $t('whatDoWeDo') }}
+        </a>
+        <a href="#contact-us"
+           class="mx-2 py-2 px-4 rounded-md text-lg group relative transition-all ease-linear duration-200 hover:text-slate-50">
+          <div
+              class="absolute hidden group-hover:block -inset-3 w-full h-full -z-10 text-primary">
+            <Icon name="fluent:chat-multiple-32-regular"
+                  size="56px"/>
+          </div>
+          {{ $t('contactUs') }}</a>
         <div class="mx-2">
           <language-switcher/>
         </div>

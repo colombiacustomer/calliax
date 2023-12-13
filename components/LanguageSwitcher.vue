@@ -50,26 +50,57 @@
                 {{ $t('switcherLanguage') }}
               </DialogTitle>
 
-              <div class="mt-4 flex flex-col">
+              <div class="mt-4 flex flex-col text-white">
                 <label
-                    v-for="(language, index) in languages"
-                    :for="language.flag"
+                    for="es"
                     class="flex justify-center items-center rounded-md text-sm font-medium text-slate-100 hover:bg-primary hover:text-secondary py-4 space-x-6"
                     @click="closeModal"
                 >
                   <input type="radio"
                          v-model="locale"
-                         :id="language.flag"
-                         :value="language.flag"
+                         id="es"
+                         value="es"
                          class="hidden"/>
-                  <!--                         class="w-1/3 flex flex-row items-center space-x-3"/>-->
                   <img
                       class="flex shrink-0"
-                      :src="'flags/w40/'+ language.flag + '.png'"
+                      src="flags/w40/es.png"
                       width="28"
-                      :alt="language.country">
-                  <span class="flex w-1/3">{{ language.name }}</span>
-                  <!--                  </input>-->
+                      alt="es">
+                  <span class="flex w-1/3">{{ $t('spanish')}}</span>
+                </label>
+                <label
+                    for="pt"
+                    class="flex justify-center items-center rounded-md text-sm font-medium text-slate-100 hover:bg-primary hover:text-secondary py-4 space-x-6"
+                    @click="closeModal"
+                >
+                  <input type="radio"
+                         v-model="locale"
+                         id="pt"
+                         value="pt"
+                         class="hidden"/>
+                  <img
+                      class="flex shrink-0"
+                      src="flags/w40/pt.png"
+                      width="28"
+                      alt="pt">
+                  <span class="flex w-1/3">{{ $t('portuguese')}}</span>
+                </label>
+                <label
+                    for="us"
+                    class="flex justify-center items-center rounded-md text-sm font-medium text-slate-100 hover:bg-primary hover:text-secondary py-4 space-x-6"
+                    @click="closeModal"
+                >
+                  <input type="radio"
+                         v-model="locale"
+                         id="us"
+                         value="us"
+                         class="hidden"/>
+                  <img
+                      class="flex shrink-0"
+                      src="flags/w40/us.png"
+                      width="28"
+                      alt="us">
+                  <span class="flex w-1/3">{{ $t('english')}}</span>
                 </label>
               </div>
             </DialogPanel>
@@ -90,7 +121,15 @@ import {
   DialogTitle,
 } from '@headlessui/vue'
 
-const { locale, t } = useI18n()
+const { t, locales, locale, setLocaleCookie } = useI18n({
+  useScope: 'global'
+})
+
+const switchLocalePath = useSwitchLocalePath()
+
+const availableLocales = computed(() => {
+  return (locales.value)
+})
 
 const isOpen = ref(false)
 const languages = [

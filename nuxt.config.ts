@@ -11,7 +11,29 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         [
             '@nuxtjs/i18n',
-            { vueI18n: './i18n.config.ts' }
+            {
+                vueI18n: './i18n.config.ts',
+                detectBrowserLanguage: {
+                    useCookie: true,
+                    cookieKey: 'i18n_redirected',
+                    redirectOn: 'root',
+                },
+                // langDir: 'lang',
+                // locales: [
+                //     {
+                //         code: 'us',
+                //         name: 'English',
+                //     },
+                //     {
+                //         code: 'es',
+                //         name: 'Español',
+                //     },
+                //     {
+                //         code: 'pt',
+                //         name: 'Portugués',
+                //     }
+                // ],
+            }
         ],
         'nuxt-icon',
         'nuxt-swiper',

@@ -1,16 +1,20 @@
 export default defineI18nConfig(() => ({
-    legacy: false,
-    locale: 'pt',
+    // legacy: false,
+    locale: 'us',
+    // fallbackLocale: 'es',
+    warnHtmlInMessage: false,
     messages: {
         es: {
             aboutUs: '¿Quiénes somos?',
             whatDoWeDo: '¿Qué hacemos?',
             contactUs: 'Contacto',
-            switcherLanguage: 'Selecciona el idioma de su preferencia',
+            switcherLanguage: "Selecciona el idioma de su preferencia",
             spanish: 'Español',
             english: 'Inglés',
             portuguese: 'Portugués',
-            descriptionAboutUs: 'En Calliax, somos una gran familia, donde la unión y la colaboración son aspectos esenciales de nuestra identidad. Mantenemos un enfoque constante en la innovación, la tecnología y comunicación para mantenernos actualizados en un mundo de constante cambio, impulsados por la pasión por lo que hacemos.\n' +
+            descriptionAboutUs: 'En Calliax, somos una gran familia, donde la unión y la colaboración son aspectos' +
+                ' esenciales de' +
+                ' nuestra identidad. Mantenemos un enfoque constante en la innovación, la tecnología y comunicación para mantenernos actualizados en un mundo de constante cambio, impulsados por la pasión por lo que hacemos.\n' +
                 '\n' +
                 'La calidez y el conocimiento que proporcionamos en cada llamada telefónica son fundamentales para nuestra empresa. Nos' +
                 ' esforzamos por garantizar que cada interacción con nuestros clientes sea una experiencia agradable y constructiva. Además, nos enorgullecemos de nuestro profundo conocimiento sobre productos y servicios, lo que nos permite brindar soluciones de alta calidad. Calliax equilibra la unión y la calidez con tecnología y visión, ofreciendo un sólido conocimiento de nuestros productos y servicios para satisfacer las necesidades de nuestros clientes.',
