@@ -63,7 +63,7 @@
                          class="hidden"/>
                   <img
                       class="flex shrink-0"
-                      src="flags/w40/es.png"
+                      src="/flags/w40/es.png"
                       width="28"
                       alt="es">
                   <span class="flex w-1/3">{{ $t('spanish')}}</span>
@@ -80,7 +80,7 @@
                          class="hidden"/>
                   <img
                       class="flex shrink-0"
-                      src="flags/w40/pt.png"
+                      src="/flags/w40/pt.png"
                       width="28"
                       alt="pt">
                   <span class="flex w-1/3">{{ $t('portuguese')}}</span>
@@ -97,7 +97,7 @@
                          class="hidden"/>
                   <img
                       class="flex shrink-0"
-                      src="flags/w40/us.png"
+                      src="/flags/w40/us.png"
                       width="28"
                       alt="us">
                   <span class="flex w-1/3">{{ $t('english')}}</span>
